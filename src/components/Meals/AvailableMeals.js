@@ -34,7 +34,8 @@ const AvailableMeals = () => {
     <MealItem key={meal.id}
     name={meal.name}
     description={meal.description}
-    price={meal.price}/>
+    price={meal.price}
+    id={meal.id}/>
         )
     return <section className={classes.meals}>
         <Card>
