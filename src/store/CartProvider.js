@@ -29,7 +29,22 @@ const CartProvider = (props) => {
         })
     };
 
-    const removeItemFromCartHandler = (id) => {};
+    const removeItemFromCartHandler = (id) => {
+        setItems((prevItems) => {
+            console.log(id);
+            const mappedItems = prevItems.map(val => {
+                if(val.id === id){
+                    console.log('find');
+                    if(val.quantity>=1){
+                        val.quantity--;
+                    }
+                }
+                return val;
+            })
+            console.log(mappedItems);
+            return mappedItems;
+        })
+    };
 
     const cartContext = {
         items: items,
